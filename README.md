@@ -1,5 +1,5 @@
 # FRC Robot Code
-This is a collection of all the FRC robot code I have contributed to. Code was taken from repositories of team GitHub organizations of which I am a part of.
+This is a collection of all the FRC robot code I have contributed to. Some code was taken from repositories of team GitHub organizations of which I am a part of.
 
 Sources:
 
@@ -12,3 +12,5 @@ Sources:
 [PathfinderTest](https://github.com/frc6908/PathfinderTest) - Code for initial test of autonomous motion profiling for complex drive routines
 
 [RRT-Following](https://github.com/frc6908/RRT-Following) - Code for tuning retroreflective tape detection for semi-autonomous robot vision capabilities
+
+[NonlinearSteeringController](https://github.com/joydeepm02/NonlinearSteeringController) - Implementation of an autonomous robot trajectory following algorithm
