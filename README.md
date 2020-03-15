@@ -4,10 +4,44 @@ This is a collection of all the FRC robot code I have contributed to. Some code 
 Sources:
 
 [2018robot](https://github.com/team6908/2018robot) - Code for the [2018 robot](https://www.thebluealliance.com/team/6908/2018)
+* Features:
+  * Elevator lift mechanism with compliant intake for power cube acquisition in all orientation
+  * Scale scoring robot with switch and exchange capabilities
+  * Double robot buddy climb with ramp mechanism
+  * Switch scoring autonomous mode from center
+  * Closed loop drivetrain control with PID-based drive and rotate autonomous
+* Awards
+  * Quarterfinalist at FNC Pembroke District Event
+  * Entrepreneurship Award at FNC Pembroke District Event
+  * Highest Rookie Seed at FNC Pembroke District Event
+  * Semifinalist at FNC UNC Asheville District Event
+  * Quarterfinalist at FNC State Championship
 
 [2019robot](https://github.com/frc6908/2019neptune) - Code for the [2019 robot](https://www.thebluealliance.com/team/6908/2019)
+* Features:
+  * Arm mechanism with stealth wheel cargo intake
+  * Extruding hatch intake with compliant wheels
+  * Ability to complete cargo in Cargo Ship capabilities
+  * Rocket levels 1 and 2 cargo scoring
+  * Versatile ground hatch intake for ground and loading station pickup
+  * Reliable climb driven by 4"x1.5" Colson wheels
+* Awards
+  * Quarterfinalist at FNC Wake County District Event
+  * Quarterfinalist at FNC UNC Asheville District Event
+  * Judges Award at FNC UNC Asheville District Event
 
 2020robot - Code for the [2020 robot](https://www.thebluealliance.com/team/6908/2020)
+* Features:
+  * Wide stealth wheel intake for easy acquisition of power cells from ground and loading station
+  * Passive gravity-based hopper stores and moves 5 power cells from intake to shooter
+  * Two NEO BLDCs on direct-drive (1:1) shooter mechanism with four 4"x2" Colson wheels for long shooting range
+  * Three Power Cell and Six Power Cell auto modes, compliant with alliance partners
+  * Vision system with Limelight for autonomous alignment with target with PID control
+  * Custom Linear Interpolation LUT to estimate shooter wheel speeds based on distance from target
+  * Closed loop divetrain control with PID-based drive and rotation autonomous
+* Awards
+  * Semifinalist at FNC Wake County District Event
+  * FNC ECU Event postponed until further notice due to COVID-19
 
 [JavaForBeginners](https://github.com/frc6908/JavaForBeginners) - Tutorials to introduce prospective programmers to the Java programming language
 
