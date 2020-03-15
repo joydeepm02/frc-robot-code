@@ -38,7 +38,7 @@ Sources:
   * Three Power Cell and Six Power Cell auto modes, compliant with alliance partners
   * Vision system with Limelight for autonomous alignment with target with PID control
   * Custom Linear Interpolation LUT to estimate shooter wheel speeds based on distance from target
-  * Closed loop divetrain control with PID-based drive and rotation autonomous
+  * Closed loop drivetrain control with PID-based drive and rotation autonomous
 * Awards
   * Semifinalist at FNC Wake County District Event
   * FNC ECU Event postponed until further notice due to COVID-19
