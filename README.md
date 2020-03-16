@@ -1,5 +1,5 @@
 # FRC Robot Code
-This is a collection of all the FRC robot code I have contributed to. Some code was taken from repositories of team GitHub organizations of which I am a part of.
+This is a collection of all the FRC robot code I have contributed to. Some code was taken from repositories of team GitHub organizations which I am a part of.
 
 Sources:
 
