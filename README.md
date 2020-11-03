@@ -30,12 +30,12 @@ Sources:
   * Quarterfinalist at FNC UNC Asheville District Event
   * Judges Award at FNC UNC Asheville District Event
 
-2020robot - Code for Cookie Monster, the [2020 robot](https://www.thebluealliance.com/team/6908/2020)
+[2020robot](https://github.com/frc6908/2020robot) - Code for Cookie Monster, the [2020 robot](https://www.thebluealliance.com/team/6908/2020)
 * Features:
   * Wide stealth wheel intake for easy acquisition of power cells from ground and loading station
   * Passive gravity-based hopper stores and moves 5 power cells from intake to shooter
   * Two NEO BLDCs on direct-drive (1:1) shooter mechanism with four 4"x2" Colson wheels for long shooting range
-  * Three Power Cell and Six Power Cell auto modes, compliant with alliance partners
+  * Three Power Cell and [Six Power Cell auto](https://youtu.be/_uVDqLRs9ic) modes, compliant with alliance partners
   * Vision system with Limelight for autonomous alignment with target with PID control
   * Custom Linear Interpolation LUT to estimate shooter wheel speeds based on distance from target
   * Closed loop drivetrain control with PID-based drive and rotation autonomous
