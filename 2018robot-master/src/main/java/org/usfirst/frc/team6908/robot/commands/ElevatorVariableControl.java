@@ -26,14 +26,6 @@ public class ElevatorVariableControl extends Command {
 	@Override
 	protected void execute() {
 		double control = Robot.oi.Joystick2.getY();//reading in y-axis of 2nd joystick
-//		SmartDashboard.putNumber("elevatorControl", control);//outputting joystick values to dashboard
-//		if(control < -RobotConstants.joystickDeadzone) {
-//			Robot.elevator.extend(RobotConstants.elevatorExtendSpeed);
-//		} else if (control > RobotConstants.joystickDeadzone) {
-//			Robot.elevator.extend(-RobotConstants.elevatorExtendSpeed);
-//		} else {
-//			Robot.elevator.disable();
-//		}
 		Robot.elevator.extend(-control);
 		SmartDashboard.putNumber("Encoder", RobotMap.elevatorEncoder.getDistance());
 	}

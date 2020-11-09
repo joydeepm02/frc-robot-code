@@ -49,12 +49,9 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("A3FM", new A3FM());
 		chooser.addObject("Scale from LEFT", new ASFL());
 		chooser.addObject("Scale from RIGHT", new ASFR());
-//	//	chooser.addObject("ASFR", new ASFR(gameData));
-//		chooser.addObject("ASFL", new ASFL(gameData));
 		chooser.addObject("Baseline", new BaselineDrive());
 		SmartDashboard.putData("Auto mode", chooser);
 		RobotMap.elevatorEncoder.reset();
-//		CameraServer.getInstance().startAutomaticCapture();
 		CameraServer.getInstance().startAutomaticCapture(0);
 		CameraServer.getInstance().startAutomaticCapture(1);
 		gameData = null;
@@ -99,8 +96,6 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand!=null) {
 			autonomousCommand.start();
 		}
-		//if the  auto doesnt work, make an A3FM object here and then do a3fm.start();
-		//and refer to github for the old selectable stuff
 	}
 
 	/**
@@ -112,10 +107,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Guyro Fieri", DriveTrain.gyro.getAngle());
    		SmartDashboard.putNumber("Left Distance", RobotMap.leftEncoder.getDistance());
     	SmartDashboard.putNumber("Right Distance", RobotMap.rightEncoder.getDistance());
-//    	SmartDashboard.putNumber("Error", DriveTrain.driftfix.getError());
-//		SmartDashboard.putNumber("Elevator Encoder", RobotMap.elevatorEncoder.getDistance());
-//		SmartDashboard.putBoolean("Top Limit Switch",elevator.isAtTop());
-//		SmartDashboard.putBoolean("Bottom Limit Switch", elevator.isAtBottom());
 	}
 
 	@Override

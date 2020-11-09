@@ -66,12 +66,10 @@ public class RobotContainer {
 
   private final JoystickButton align = new JoystickButton(driveJoystick, 8);
 
-  // private final JoystickButton outreach = new JoystickButton(driveJoystick, 11);
   
  private final JoystickButton flipDT = new JoystickButton(driveJoystick, 6);
   
   private final JoystickButton shoot = new JoystickButton(driveJoystick, 1);
-  //private final JoystickButton rotate = new JoystickButton(driveJoystick, 10);
 
   SendableChooser<CommandBase> autonomousTrajectories;
 
@@ -82,10 +80,6 @@ public class RobotContainer {
   private final JoystickButton compressorOff = new JoystickButton(driveJoystick, 11);
   private final JoystickButton compressorOn = new JoystickButton(driveJoystick, 9);
 
-  //public final DoubleSolenoid sol = new DoubleSolenoid(0, 1);
-
-  // private final XboxController controller = new XboxController(1);
-
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -93,48 +87,11 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
-
-
     autonomousTrajectories = new SendableChooser<>();
 
-    // drivetrain.setDefaultCommand(
-    //   new TankDrive(
-    //     drivetrain, 
-    //     () -> -controller.getY(Hand.kLeft), 
-    //     () -> -controller.getY(Hand.kRight)
-    //   )
-    // );
-    // drivetrain.setDefaultCommand(
-    //   new CuravtureDrive(drivetrain, () -> -driveJoystick.getY(), () ->driveJoystick.getX(), () -> false, () -> driveJoystick.getThrottle()));
     climber.setDefaultCommand(new Climb(climber, () -> controller.getY(Hand.kLeft), () -> controller.getY(Hand.kRight)));
     drivetrain.setDefaultCommand(new ArcadeDrive(drivetrain, () -> -driveJoystick.getY(), () -> driveJoystick.getX(), () -> driveJoystick.getThrottle()));
-    // leds.setDefaultCommand(
-    //   new UpdateTargetPose(
-    //     shooter, 
-    //     leds)
-    // );
 
-    // Shuffleboard.getTab("Auto Commands").add("Auto Mode", autonomousTrajectories);
-
-    // try 
-    // {
-    //   File folder = new File("/home/lvuser/deploy/");
-    //   File[] listOfFiles = folder.listFiles();
-
-    //   for (int i = 0; i < listOfFiles.length; i++) {
-
-    //     if (listOfFiles[i].isFile()) 
-    //     {
-    //       System.out.println("File " + listOfFiles[i].getName());
-    //       autonomousTrajectories.addOption(listOfFiles[i].getName(), TrajectoryUtil.fromPathweaverJson(Paths.get(folder.toString() + listOfFiles[i].getName())));
-    //     } 
-
-    //   }
-    // }
-    // catch (Exception e)
-    // {
-    //   System.out.println("Unable to populate trajectories!");
-    // }
   }
 
   /**
@@ -145,8 +102,6 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
 
-    // new JoystickButton(driveJoystick, 11).whenPressed(new RunCommand(() -> shooter.setServoAngle(60)));
-
     align.whileHeld(
       new PIDRotateAngle(
         drivetrain,
@@ -155,17 +110,13 @@ public class RobotContainer {
       )
     );
 
-    // shoot.whileHeld(new Shoot(shooter, () -> shooter.topSetpointShuffleboard.getDouble(0), 
-    // () -> shooter.bottomSetpointShuffleboard.getDouble(0), leds));
-    
-    // shoot.whileHeld(new PIDRotateAngle(drivetrain, shooter, leds).andThen(new TeleopVisionAssistedShoot(shooter)));
     shoot9015.whileHeld(new Shoot(shooter, () -> 11.5, () -> 90, pneumatics));
     shoot9020.whileHeld(new Shoot(shooter, () -> 20, () -> 90, pneumatics));
-    // shoot9010.whileHeld(new Shoot(shooter, () -> 10, () -> 90, leds, pneumatics));
+
     shoot9010.whenPressed(new InstantCommand(pneumatics::TurnOffSolenoid, pneumatics));
-    // shoot.whileHeld(new Shoot(shooter, () -> 13, () -> 90, leds, pneumatics));
+
     shoot.whileHeld(new VisionAssistedShoot(shooter, pneumatics));
-    // shoot.whileHeld(new Shoot(shooter, () -> shooter.topSetpointShuffleboard.getDouble(0), () -> shooter.bottomSetpointShuffleboard.getDouble(0), leds, pneumatics));
+
 
     flipDT.whenPressed(new FlipDrivetrain(drivetrain));
     
@@ -173,24 +124,8 @@ public class RobotContainer {
     compressorOff.whenPressed(new InstantCommand(pneumatics::TurnOffCompressor, pneumatics));
     compressorOn.whenPressed(new InstantCommand(pneumatics::TurnOnCompressor, pneumatics));
 
-    //servoTest.whileHeld(new Shoot(shooter, () -> 0, () -> 0, pneumatics));
-    servoTest.whenPressed(new TurnToAngle(drivetrain, 0));
-    // rotate.whenPressed(new TurnToAngle(drivetrain, 180));
-    // rotate.whenPressed(new UpdateTargetPose(shooter, leds).andThen(new PIDRotateAngle(drivetrain, shooter, leds)));
-    // rotate.whileHeld(
-    //   new PIDRotateAngle(drivetrain, shooter, leds).andThen(
-    //     new Shoot(
-    //       shooter,
-    //       () -> shooter.topSetpointShuffleboard.getDouble(0.0),
-    //       () -> shooter.bottomSetpointShuffleboard.getDouble(0.0),
-    //       leds
-    //     )
-    //   )
-    // );
-    // rotate.whenPressed(new UpdateTargetPose(shooter, leds));
-    //rotate.whenPressed(new DriveDistanceStraight(drivetrain, 175)); //setpoint in inches
 
-   //\ flipDT.whenPressed(new FlipDrivetrain(drivetrain));
+    servoTest.whenPressed(new TurnToAngle(drivetrain, 0));
 
     intakeCell.whileHeld(new IntakeCell(intake, shooter, pneumatics));
     outtakeCell.whileHeld(new OuttakeCell(intake));

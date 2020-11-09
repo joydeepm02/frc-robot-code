@@ -44,13 +44,11 @@ public class VisionAssistedShoot extends CommandBase {
       if(MathUtil.withinTolerance(tv, tsp, 3)) {
         shooter.servoOpen();
         pneumatics.OpenSolenoid();
-        //pneumatics.TurnOffSolenoid();
       }
       shooter.tpid.setSetpoint(tsp);
       shooter.bpid.setSetpoint(bsp);
       double calctop = shooter.tpid.calculate(tv);
       double calcBot = shooter.bpid.calculate(bv);
-      // System.out.println(calcBot + shooter.bff.calculate(bsp));
       shooter.setTopMotorVoltage(calctop + shooter.tff.calculate(tsp));
       shooter.setBottomMotorVoltage(calcBot + shooter.bff.calculate(bsp));
   }

@@ -35,7 +35,5 @@ public class LimelightVision extends SubsystemBase {
   }
   @Override
   public void periodic() {
-    // System.out.println("Yaw fangle to target: " + getHorizontalOffset());
-    // System.out.println("Distance to target: " + getDistance());
   }
 }

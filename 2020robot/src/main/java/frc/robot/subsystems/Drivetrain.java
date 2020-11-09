@@ -89,20 +89,6 @@ public class Drivetrain extends SubsystemBase {
       drive.curvatureDrive(-xSpeed, -zRotation, isQuickTurn);
   }
 
-  // public void setDriveMotorVoltage(double leftVoltage, double rightVoltage)
-  // {
-  //   if (!flipped)
-  //   {
-  //     leftMotors.set(leftVoltage);
-  //     rightMotors.set(rightVoltage);
-  //   }
-  //   if (flipped)
-  //   {
-  //     leftMotors.set(-rightVoltage);
-  //     rightMotors.set(-leftVoltage);
-  //   }
-  // }
-
   public void setDriveMotors(double value) {
     if (!flipped)
     {
@@ -162,38 +148,15 @@ public class Drivetrain extends SubsystemBase {
     gyro.reset();
   }
 
-  // public DifferentialDriveWheelSpeeds getWheelSpeeds()
-  // {
-  //   return new DifferentialDriveWheelSpeeds((double) leftDriveMaster.getSelectedSensorVelocity() * 10 * Constants.kDistancePerTick, (double) rightDriveMaster.getSelectedSensorVelocity() * 10 * Constants.kDistancePerTick);
-  // }
-  //
-  // public Pose2d getPose()
-  // {
-  //   return odometry.getPoseMeters();
-  // }
-
   /** 
    * @param poseMeters The position on the field the robot is at.
   */
   public void resetPose(Pose2d poseMeters)
   {
     odometry.resetPosition(poseMeters, getHeading());
-    // leftDriveMaster.setSelectedSensorPosition(0);
-    // rightDriveMaster.setSelectedSensorPosition(0);
   }
   
   @Override
   public void periodic() {
-    // System.out.println("Current distance: " + venomTicksToInches(getLeftEncoderDistance()));
-    // System.out.println("Right encoder: " + getRightEncoderDistance());
-    // System.out.println("Left encoder: " + getLeftEncoderDistance());
-    // System.out.println("Distance in inches (RIGHT): " + venomTicksToInches(getRightEncoderDistance()));
-    // System.out.println("Distance in inches (LEFT): " + venomTicksToInches(getLeftEncoderDistance()));
-
-    // System.out.println("Current heading: " + getHeadingAsAngle());
-    // This method will be called once per scheduler run
-    // odometry.update(getHeading(), leftDriveMaster.getSelectedSensorPosition() * Constants.kDistancePerTick, rightDriveMaster.getSelectedSensorPosition() * Constants.kDistancePerTick);
-    // System.out.println("left: " + leftDriveMaster.getSelectedSensorPosition());
-    // System.out.println("right: " + rightDriveMaster.getSelectedSensorPosition());
   }
 }

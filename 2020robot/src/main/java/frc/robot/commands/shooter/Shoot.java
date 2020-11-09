@@ -35,12 +35,6 @@ public class Shoot extends CommandBase {
 
   @Override
   public void initialize() {
-    System.out.println("Started Shoot");
-    // pneumatics.CloseSolenoid();
-    //shooter.setServoAngle(60);
-    // leds.turnOn();
-    // shooter.tpid.setTolerance(1);
-    // shooter.bpid.setTolerance(1);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -53,17 +47,13 @@ public class Shoot extends CommandBase {
       if(MathUtil.withinTolerance(tv, tsp, 3)) {
         shooter.servoOpen();
         pneumatics.OpenSolenoid();
-        //pneumatics.TurnOffSolenoid();
       }
       shooter.tpid.setSetpoint(tsp);
       shooter.bpid.setSetpoint(bsp);
       double calctop = shooter.tpid.calculate(tv);
       double calcBot = shooter.bpid.calculate(bv);
-      // System.out.println(calcBot + shooter.bff.calculate(bsp));
       shooter.setTopMotorVoltage(calctop + shooter.tff.calculate(tsp));
       shooter.setBottomMotorVoltage(calcBot + shooter.bff.calculate(bsp));
-      // shooter.setTopMotorVoltage(2);
-      // shooter.setBottomMotorVoltage(6);
   }
 
   // Called once the command ends or is interrupted.
@@ -71,9 +61,6 @@ public class Shoot extends CommandBase {
   public void end(boolean interrupted) {
     shooter.setTopMotorVoltage(0);
     shooter.setBottomMotorVoltage(0);
-    // shooter.servoClose();
-    // pneumatics.CloseSolenoid();
-    // leds.turnOff();
   }
 
   // Returns true when the command should end.

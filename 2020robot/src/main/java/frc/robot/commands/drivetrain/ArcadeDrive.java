@@ -46,9 +46,6 @@ public class ArcadeDrive extends CommandBase {
     double turn = Math.pow(turnSupplier.getAsDouble(), 2) * Math.signum(turnSupplier.getAsDouble());
     
     double speedMultiplier = MathUtil.normalize(1, -1, 0.2, 1, speedMultiplierRaw);
-    // System.out.println("Speed Multiplier " + speedMultiplier);
-    // System.out.println("X " + turn);
-    // System.out.println("Y " + throttle);
 
     throttle = Math.abs(throttle) < 0.1 ? 0 : throttle;
 

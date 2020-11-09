@@ -45,37 +45,27 @@ public class PIDRotateAngle extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("Started Rotate");
     stopAccumulator = 0;
     setpoint = 0;
     cumError = 0;
     previousError = 0;
     error = 0;
-    System.out.println("Beginning vision rotate");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // System.out.println("Yaw error: " + shooter.getYawToTarget());
-      // shooter.setTargetPose2d(shooter.getTargetPose2d());
-      // shooter.setTargetPose3d(shooter.getTargetPose3d());
       error = -shooter.getHorizontalOffset();
-      //error = 
-      // error = - shooter.cameraTable.getEntry("targetYaw").getDouble(0.0);
-      // System.out.println("error: " + error);
       cumError += error * Constants.kDT;
       double output = (kP * error) + (kD * (error - previousError) / Constants.kDT) + (kI * cumError);
       drivetrain.arcadeDrive(0, -output);
       previousError = error;
-      System.out.println("Yaw error: " + shooter.getHorizontalOffset());
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
     drivetrain.stop();
-    // System.out.println("Stop accumulator: " + stopAccumulator + ". Ending vision rotate");
   }
 
   // Returns true when the command should end.

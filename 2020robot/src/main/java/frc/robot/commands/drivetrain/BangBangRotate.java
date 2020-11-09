@@ -34,14 +34,11 @@ public class BangBangRotate extends CommandBase {
   @Override
   public void initialize() {
     setpointValue = drivetrain.getHeadingAsAngle() - shooter.getHorizontalOffset();
-    // System.out.println("Setpoint: " + setpointValue);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // System.out.println("Rotation Setpoint: " + setpointValue);
-    // System.out.println("current heading: " + drivetrain.getHeadingAsAngle());
     error = drivetrain.getHeadingAsAngle() - setpointValue;
     drivetrain.arcadeDrive(0, 0.3 * MathUtil.sign(error));
   }
